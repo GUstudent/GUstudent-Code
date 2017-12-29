@@ -1,4 +1,4 @@
-# GUstudent
+# Welcome!
 
 Hello!
 This repository is used by Geering Up, and stores all the skeleton code for Winter Workshops (2018).
