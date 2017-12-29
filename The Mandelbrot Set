@@ -1,0 +1,34 @@
+# The Mandelbrot Set
+
+import numpy as np       
+import matplotlib.pyplot as plt       
+import scipy       
+
+x=np.linspace(-2.5,1,1000)         
+y=np.linspace(-1.5,1.5,1000)      
+a,b = np.meshgrid(x,y)               
+c=a+1j*b                                  
+ 
+maxiterations=____
+def mandelbrot_set(c, maxiterations):
+      	emptystartinggrid = np.zeros(________)
+____ = emptystartinggrid        
+      	z=____.reshape(____, ____)    
+      	zz=np.copy(____)                  
+      	for n in range(1,maxiterations):  
+                 	z=z**2+c               
+                 	____=np.where(abs(z)>2)
+                 	zz[____]=n
+      	return zz
+ 
+plt.imshow(np.sqrt(mandelbrot_set(c, maxiterations)), cmap='viridis_r')
+plt.title("Mandelbrot Set")
+plt.xlabel("Re[c] (the real part of set c)")
+plt.ylabel("Im[c] (the imaginary part of set c)")
+ 
+ax=plt.subplot(111)
+t = plt.text(0.06, 0.94, 'c = a number in the complex plane', transform=ax.transAxes, fontsize=12)
+t.set_bbox(dict(facecolor='white', alpha=0.95, edgecolor='white'))
+
+plt.show()
+plt.clf()
